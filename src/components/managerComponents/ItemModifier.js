@@ -7,12 +7,14 @@ function ItemModifier() {
     total: "",
     action: "",
   });
+  const [updateThese, setUpdateThese] = useState([]);
 
-  console.log("formhere", form);
   function captureInfo() {
-    console.log("click");
+    console.log("this is the form", form);
+    setUpdateThese((prevState) => prevState.concat(form));
   }
 
+  console.log("updatethese", updateThese.length, updateThese);
   function handleChange(evt) {
     const value = evt.target.value;
     setForm({
@@ -66,6 +68,18 @@ function ItemModifier() {
           <input type="submit" onClick={captureInfo} />
         </fieldset>
       </InsertBox>
+      <SubmitBox>
+        <>
+          {updateThese.length > 0 ? (
+            updateThese.map((item) => {
+              console.log(item);
+              return <div>{item.name}</div>;
+            })
+          ) : (
+            <div>nothing here yet!</div>
+          )}
+        </>
+      </SubmitBox>
     </Container>
   );
 }
@@ -76,5 +90,8 @@ const Container = styled.div`
 `;
 const InsertBox = styled.div`
   border: 1px gold solid;
+`;
+const SubmitBox = styled.div`
+  border: 1px red solid;
 `;
 export default ItemModifier;

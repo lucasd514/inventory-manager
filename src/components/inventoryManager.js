@@ -20,6 +20,10 @@ const Box = styled.div`
 `;
 
 const InsertInto = styled.div`
+  background-color: rgb(47, 56, 255, 0.5);
+  height: 100vh;
+  width: 25vw;
   margin-right: 20px;
+  border-right: 3px dashed black;
 `;
 export default InventoryManager;

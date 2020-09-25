@@ -73,7 +73,7 @@ function ItemModifier() {
           {updateThese.length > 0 ? (
             updateThese.map((item) => {
               console.log(item);
-              return <div>{item.name}</div>;
+              return <ConfirmItems>{item.name}</ConfirmItems>;
             })
           ) : (
             <div>nothing here yet!</div>
@@ -93,5 +93,9 @@ const InsertBox = styled.div`
 `;
 const SubmitBox = styled.div`
   border: 1px red solid;
+`;
+
+const ConfirmItems = styled.div`
+  border: 1px blue solid;
 `;
 export default ItemModifier;
